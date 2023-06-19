@@ -1,0 +1,1 @@
+{"uuid":"586b3cae-ee67-42b2-a56f-727f246c6004","name":"shouldHappyPathCredit()","children":["f4d266e8-e396-44ef-b26d-0545f0cab9d2"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173047579,"stop":1687173047645}],"start":1687173047378,"stop":1687173047647}

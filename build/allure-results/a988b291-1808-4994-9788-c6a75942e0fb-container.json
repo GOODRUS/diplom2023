@@ -1,0 +1,1 @@
+{"uuid":"a988b291-1808-4994-9788-c6a75942e0fb","name":"shouldHappyPathPayment()","children":["ad392322-bfeb-4580-9afe-5f11a3e6460f"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173047132,"stop":1687173047201}],"start":1687173047001,"stop":1687173047202}

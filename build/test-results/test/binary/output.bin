@@ -1,0 +1,317 @@
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "11",
+'    "holder": "MR. TRENTON GREENHOLT",
+    "cvc": "469"
+}
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "03",
+    "year": "26",
+    "cvc": "644"
+}
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "10",
+    "year": "24",
+     "holder": "DENIS GREENHOLT"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "month": "06",
+    "year": "23",
+    "holder": "MERLE FADEL",
+    "cvc": "135"
+}
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "07",
+#    "holder": "MRS. REUBEN JONES",
+    "cvc": "882"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "07",
+    "year": "24",
+     "holder": "KARRIE BOGAN IV"
+}
+	Request method:	POST
+	2Request URI:	http://localhost:8080/api/v1/credit
+	Proxy:			<none>
+	Request params:	<none>
+	Query params:	<none>
+	Form params:	<none>
+	Path params:	<none>
+	WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+	#				Content-Type=application/json
+	Cookies:		<none>
+	Multiparts:		<none>
+	Body:
+	{
+	    "month": "07",
+	    "year": "24",
+	    "holder": "TUAN NIKOLAUS",
+	    "cvc": "878"
+	}
+
+Request method:	POST
+
+2Request URI:	http://localhost:8080/api/v1/credit
+
+Proxy:			<none>
+
+Request params:	<none>
+
+Query params:	<none>
+
+Form params:	<none>
+
+Path params:	<none>
+
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+
+#				Content-Type=application/json
+
+Cookies:		<none>
+
+Multiparts:		<none>
+
+Body:
+
+{
+
+%    "number": "4444 4444 4444 4441",
+
+    "year": "25",
+
+#    "holder": "LARITA ERNSER III",
+
+    "cvc": "679"
+
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4442",
+    "month": "08",
+    "year": "24",
+    "holder": "CODI BEER",
+    "cvc": "020"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "02",
+    "year": "25",
+    "cvc": "001"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "year": "26",
+    "holder": "AUGUST BRAKUS",
+    "cvc": "668"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "08",
+    "year": "24",
+$    "holder": "JEREMY DOUGLAS SR.",
+    "cvc": "236"
+}
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4442",
+    "month": "02",
+    "year": "26",
+    "holder": "LESTER FEIL",
+    "cvc": "190"
+}
+Request method:	POST
+2Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "03",
+    "year": "24",
+$    "holder": "GEARLDINE KOCH JR.",
+    "cvc": "747"
+}
+ š[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+ Ž[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: E:\AutoTesting\diplom2023\build\downloads\1687173047928_19160_1
+ ‚[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+ µ[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ |Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 8888
+ %Only local connections are allowed.
+ tPlease see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ (ChromeDriver was started successfully.
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ \Ð¸ÑŽÐ½. 19, 2023 4:11:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ iWARNING: Unable to find an exact match for CDP version 114, so returning the closest version found: 110
+ ƒ[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=114.0.5735.134 Platform=WINDOWS
+ [[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.12.2
+ [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.8.1 build revision: 8ebccac989
+ Â[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (4e4c8e23376531f6ba3eb79a69a8f82e)
+ ¶[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on WINDOWS (4e4c8e23376531f6ba3eb79a69a8f82e),proxy=null,downloadsFolder=E:\AutoTesting\diplom2023\build\downloads\1687173047928_19160_1] in 1 [size=1]
+ p[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]

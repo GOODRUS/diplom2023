@@ -1,0 +1,1 @@
+{"uuid":"5217ee10-c59f-48d1-b72d-5673357a7b4b","name":"shouldStatus400WithEmptyCVVPayment()","children":["31653ffe-193b-40a4-9bde-b2fd1598fc58"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173046050,"stop":1687173046115}],"start":1687173045939,"stop":1687173046117}

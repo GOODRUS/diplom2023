@@ -1,0 +1,1 @@
+{"uuid":"bfe95adc-29a3-4c4e-a799-e77ace952e19","name":"shouldStatus400WithEmptyMonthCredit()","children":["0e7ae76c-9d8d-4676-b936-720080b9f031"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173046258,"stop":1687173046318}],"start":1687173046189,"stop":1687173046319}
