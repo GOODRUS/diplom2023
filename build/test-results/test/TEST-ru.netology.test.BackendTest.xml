@@ -1,108 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.test.BackendTest" tests="16" skipped="0" failures="13" errors="0" timestamp="2023-06-19T11:10:43" hostname="DESKTOP-LLC6GVE" time="4.513">
+<testsuite name="ru.netology.test.BackendTest" tests="16" skipped="0" failures="12" errors="0" timestamp="2023-06-23T09:33:23" hostname="DESKTOP-LLC6GVE" time="12.809">
   <properties/>
-  <testcase name="shouldStatus400WithEmptyBodyCredit()" classname="ru.netology.test.BackendTest" time="1.7">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;0&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;0&gt; but was: &lt;2&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:528)
-	at app//ru.netology.test.BackendTest.shouldStatus400WithEmptyBodyCredit(BackendTest.java:174)
-	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.16/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.16/java.lang.reflect.Method.invoke(Method.java:566)
-	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at app//org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestMethod(InvocationInterceptor.java:118)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@11.0.16/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@11.0.16/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at app//org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.16/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.16/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</failure>
-  </testcase>
-  <testcase name="shouldStatus400WithEmptyYearPayment()" classname="ru.netology.test.BackendTest" time="0.532">
+  <testcase name="Sending a POST request with an empty body when paying on credit" classname="ru.netology.test.BackendTest" time="2.139"/>
+  <testcase name="Sending a POST request with an empty year attribute in the body when paying" classname="ru.netology.test.BackendTest" time="1.33">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -132,7 +32,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyYearPayment(BackendTest.java:266)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyYearPayment(BackendTest.java:271)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -225,7 +125,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyHolderCredit()" classname="ru.netology.test.BackendTest" time="0.19">
+  <testcase name="Sending a POST request with an empty holder attribute in the body when credit" classname="ru.netology.test.BackendTest" time="0.696">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -253,7 +153,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyHolderCredit(BackendTest.java:326)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyHolderCredit(BackendTest.java:334)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -346,7 +246,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyCVVCredit()" classname="ru.netology.test.BackendTest" time="0.148">
+  <testcase name="Sending a POST request with an empty CVC/CVV attribute in the body when credit" classname="ru.netology.test.BackendTest" time="0.616">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -374,7 +274,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyCVVCredit(BackendTest.java:366)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyCVVCredit(BackendTest.java:376)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -467,7 +367,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyNumberPayment()" classname="ru.netology.test.BackendTest" time="0.084">
+  <testcase name="Sending a POST request with an empty number in the body when paying" classname="ru.netology.test.BackendTest" time="0.117">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;500&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;500&gt;.
 
@@ -495,7 +395,7 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyNumberPayment(BackendTest.java:187)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyNumberPayment(BackendTest.java:188)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -588,7 +488,7 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyYearCredit()" classname="ru.netology.test.BackendTest" time="0.14">
+  <testcase name="Sending a POST request with an empty year attribute in the body when credit" classname="ru.netology.test.BackendTest" time="1.011">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -616,7 +516,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyYearCredit(BackendTest.java:286)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyYearCredit(BackendTest.java:292)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -709,7 +609,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyCVVPayment()" classname="ru.netology.test.BackendTest" time="0.177">
+  <testcase name="Sending a POST request with an empty CVC/CVV attribute in the body when paying" classname="ru.netology.test.BackendTest" time="0.672">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -737,7 +637,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyCVVPayment(BackendTest.java:346)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyCVVPayment(BackendTest.java:355)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -830,7 +730,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyNumberCredit()" classname="ru.netology.test.BackendTest" time="0.07">
+  <testcase name="Sending a POST request with an empty number in the body when credit" classname="ru.netology.test.BackendTest" time="0.082">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;500&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;500&gt;.
 
@@ -858,7 +758,7 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyNumberCredit(BackendTest.java:206)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyNumberCredit(BackendTest.java:208)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -951,7 +851,7 @@ Expected status code &lt;400&gt; but was &lt;500&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyMonthCredit()" classname="ru.netology.test.BackendTest" time="0.129">
+  <testcase name="Sending a POST request with an empty month attribute to the body when credit" classname="ru.netology.test.BackendTest" time="0.829">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -979,7 +879,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyMonthCredit(BackendTest.java:246)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyMonthCredit(BackendTest.java:250)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1072,7 +972,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldSadPathPayment()" classname="ru.netology.test.BackendTest" time="0.141">
+  <testcase name="Sending a POST request with a declined card when paying for a tour" classname="ru.netology.test.BackendTest" time="0.944">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -1100,7 +1000,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldSadPathPayment(BackendTest.java:110)
+	at ru.netology.test.BackendTest.shouldSadPathPayment(BackendTest.java:107)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1193,7 +1093,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyHolderPayment()" classname="ru.netology.test.BackendTest" time="0.143">
+  <testcase name="Sending a POST request with an empty holder attribute in the body when paying" classname="ru.netology.test.BackendTest" time="0.728">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -1221,7 +1121,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyHolderPayment(BackendTest.java:306)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyHolderPayment(BackendTest.java:313)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1314,7 +1214,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyMonthPayment()" classname="ru.netology.test.BackendTest" time="0.273">
+  <testcase name="Sending a POST request with an empty month attribute in the body when paying" classname="ru.netology.test.BackendTest" time="0.788">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -1342,7 +1242,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldStatus400WithEmptyMonthPayment(BackendTest.java:226)
+	at ru.netology.test.BackendTest.shouldStatus400WithEmptyMonthPayment(BackendTest.java:229)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1435,9 +1335,9 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldStatus400WithEmptyBodyPayment()" classname="ru.netology.test.BackendTest" time="0.111"/>
-  <testcase name="shouldHappyPathPayment()" classname="ru.netology.test.BackendTest" time="0.201"/>
-  <testcase name="shouldSadPathCredit()" classname="ru.netology.test.BackendTest" time="0.173">
+  <testcase name="Sending a POST request with an empty body when paying for a tour" classname="ru.netology.test.BackendTest" time="0.298"/>
+  <testcase name="Sending a POST request with an approved card when paying for a tour" classname="ru.netology.test.BackendTest" time="0.907"/>
+  <testcase name="Sending a POST request with a declined card when paying on credit" classname="ru.netology.test.BackendTest" time="0.814">
     <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -1465,7 +1365,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at ru.netology.test.BackendTest.shouldSadPathCredit(BackendTest.java:132)
+	at ru.netology.test.BackendTest.shouldSadPathCredit(BackendTest.java:130)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1558,7 +1458,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="shouldHappyPathCredit()" classname="ru.netology.test.BackendTest" time="0.269"/>
+  <testcase name="Sending a POST request with an approved card when paying for a tour credit" classname="ru.netology.test.BackendTest" time="0.757"/>
   <system-out><![CDATA[Request method:	POST
 Request URI:	http://localhost:8080/api/v1/credit
 Proxy:			<none>
@@ -1585,12 +1485,84 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4441",
-    "month": "11",
-    "holder": "MR. TRENTON GREENHOLT",
-    "cvc": "469"
+    "month": "05",
+    "holder": "KATHARYN MACEJKOVIC",
+    "cvc": "493"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "number": "4444 4444 4444 4441",
+    "month": "09",
+    "year": "24",
+    "cvc": "025"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "number": "4444 4444 4444 4441",
+    "month": "02",
+    "year": "25",
+    "holder": "JACQUELYNN STROSIN"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "month": "08",
+    "year": "23",
+    "holder": "CRUZ DAUGHERTY",
+    "cvc": "515"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "number": "4444 4444 4444 4441",
+    "month": "11",
+    "holder": "MISS GERRY LUEILWITZ",
+    "cvc": "257"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/pay
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -1604,116 +1576,44 @@ Body:
 {
     "number": "4444 4444 4444 4441",
     "month": "03",
-    "year": "26",
-    "cvc": "644"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "number": "4444 4444 4444 4441",
-    "month": "10",
-    "year": "24",
-    "holder": "DENIS GREENHOLT"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "month": "06",
-    "year": "23",
-    "holder": "MERLE FADEL",
-    "cvc": "135"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "number": "4444 4444 4444 4441",
-    "month": "07",
-    "holder": "MRS. REUBEN JONES",
-    "cvc": "882"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "number": "4444 4444 4444 4441",
-    "month": "07",
-    "year": "24",
-    "holder": "KARRIE BOGAN IV"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "month": "07",
-    "year": "24",
-    "holder": "TUAN NIKOLAUS",
-    "cvc": "878"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "number": "4444 4444 4444 4441",
     "year": "25",
-    "holder": "LARITA ERNSER III",
-    "cvc": "679"
+    "holder": "DR. CHAN CONN"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "month": "03",
+    "year": "26",
+    "holder": "RETHA MILLS",
+    "cvc": "556"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/credit
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "number": "4444 4444 4444 4441",
+    "year": "23",
+    "holder": "JULIAN HESSEL",
+    "cvc": "423"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/pay
@@ -1729,28 +1629,10 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4442",
-    "month": "08",
-    "year": "24",
-    "holder": "CODI BEER",
-    "cvc": "020"
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=application/json, application/javascript, text/javascript, text/json
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "number": "4444 4444 4444 4441",
-    "month": "02",
+    "month": "05",
     "year": "25",
-    "cvc": "001"
+    "holder": "MISS VELVET UPTON",
+    "cvc": "624"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/pay
@@ -1766,9 +1648,27 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4441",
-    "year": "26",
-    "holder": "AUGUST BRAKUS",
-    "cvc": "668"
+    "month": "10",
+    "year": "23",
+    "cvc": "610"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "number": "4444 4444 4444 4441",
+    "year": "24",
+    "holder": "ARNOLDO THOMPSON",
+    "cvc": "256"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/pay
@@ -1796,10 +1696,10 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4441",
-    "month": "08",
-    "year": "24",
-    "holder": "JEREMY DOUGLAS SR.",
-    "cvc": "236"
+    "month": "03",
+    "year": "26",
+    "holder": "DANILO LIND",
+    "cvc": "632"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/credit
@@ -1815,10 +1715,10 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4442",
-    "month": "02",
+    "month": "03",
     "year": "26",
-    "holder": "LESTER FEIL",
-    "cvc": "190"
+    "holder": "LARISSA WILKINSON",
+    "cvc": "168"
 }
 Request method:	POST
 Request URI:	http://localhost:8080/api/v1/credit
@@ -1834,10 +1734,10 @@ Multiparts:		<none>
 Body:
 {
     "number": "4444 4444 4444 4441",
-    "month": "03",
-    "year": "24",
-    "holder": "GEARLDINE KOCH JR.",
-    "cvc": "747"
+    "month": "07",
+    "year": "25",
+    "holder": "PINKIE BLANDA",
+    "cvc": "386"
 }
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

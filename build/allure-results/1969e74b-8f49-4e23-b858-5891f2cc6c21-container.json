@@ -1,1 +1,0 @@
-{"uuid":"1969e74b-8f49-4e23-b858-5891f2cc6c21","name":"shouldStatus400WithEmptyHolderCredit()","children":["eb9d9cd9-3dbf-4f5b-81d9-6adf469a9ee7"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173045492,"stop":1687173045560}],"start":1687173045371,"stop":1687173045561}

@@ -92,7 +92,7 @@ public class FormPage {
 
     public void assertMonthFieldIsEmptyValue() {
         monthLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
-        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
+        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
     }
 
     public void assertMonthFieldIsInvalidValue() {
@@ -100,14 +100,19 @@ public class FormPage {
         monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверно указан срок действия карты"));
     }
 
-    public void assertMonthFieldIsInvalidValueAnother() {
+    public void assertMonthFieldIsInvalidFormat() {
         monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
         monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
     }
 
     public void assertYearFieldIsEmptyValue() {
         yearLabel.should(Condition.cssClass("input_invalid"));
-        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
+        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
+    }
+
+    public void assertYearFieldIsInvalidFormat() {
+        monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
     }
 
     public void assertYearFieldIsInvalidValue() {
@@ -128,6 +133,11 @@ public class FormPage {
     public void assertHolderFieldIsInvalidValue() {
         holderLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
         holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
+    }
+
+    public void assertHolderInvalidSymbols() {
+        holderLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Наименования Владельца должно быть указано латиницей верхнего регистра"));
     }
 
     public void assertCvcFieldIsEmptyValue() {

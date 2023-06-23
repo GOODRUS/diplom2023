@@ -1,1 +1,0 @@
-{"uuid":"6d0e55a8-a3ee-4bb8-9417-36e7a4f47e82","name":"shouldStatus400WithEmptyYearPayment()","children":["33e9de3d-137c-48de-ba3e-1800dd8cd510"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1687173045264,"stop":1687173045365}],"start":1687173044837,"stop":1687173045367}

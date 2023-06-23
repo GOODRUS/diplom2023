@@ -13,19 +13,14 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 import ru.netology.data.DataHelper;
 import ru.netology.data.DBHelper;
-import ru.netology.data.DBHelper;
-import ru.netology.page.CardPage;
 
-
-import java.text.NumberFormat;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 import static ru.netology.data.DBHelper.cleanDatabase;
 import static ru.netology.data.DataHelper.*;
-import static ru.netology.test.FrontendTest.teardown;
+
 
 
 public class BackendTest {
@@ -44,7 +39,6 @@ public class BackendTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-
     @AfterEach
     public void teardown() {
         cleanDatabase();
@@ -59,6 +53,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with an approved card when paying for a tour")
     public void shouldHappyPathPayment() {
         cardInfo = DataHelper.getValidApprovedCard();
         var body = gson.toJson(cardInfo);
@@ -80,6 +75,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with an approved card when paying for a tour credit")
     public void shouldHappyPathCredit() {
         cardInfo = DataHelper.getValidApprovedCard();
         var body = gson.toJson(cardInfo);
@@ -102,6 +98,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with a declined card when paying for a tour")
     public void shouldSadPathPayment() {
         cardInfo = DataHelper.getValidDeclinedCard();
         var body = gson.toJson(cardInfo);
@@ -124,6 +121,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with a declined card when paying on credit")
     public void shouldSadPathCredit() {
         cardInfo = DataHelper.getValidDeclinedCard();
         var body = gson.toJson(cardInfo);
@@ -146,6 +144,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with an empty body when paying for a tour")
     public void shouldStatus400WithEmptyBodyPayment() {
         given().spec(spec)
                 .when().post(paymentUrl)
@@ -162,6 +161,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
+    @DisplayName("Sending a POST request with an empty body when paying on credit")
     public void shouldStatus400WithEmptyBodyCredit() {
         given().spec(spec)
                 .when().post(creditUrl)
@@ -178,6 +178,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty number in the body when paying")
     public void shouldStatus400WithEmptyNumberPayment() {
         cardInfo = new DataHelper.CardInfo(null, getValidRandomMonth(), getValidRandomYear(),
                 generateValidRandomCardsHolder(), generateRandomCVV());
@@ -197,6 +198,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty number in the body when credit")
     public void shouldStatus400WithEmptyNumberCredit() {
         cardInfo = new DataHelper.CardInfo(null, getValidRandomMonth(), getValidRandomYear(),
                 generateValidRandomCardsHolder(), generateRandomCVV());
@@ -216,6 +218,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty month attribute in the body when paying")
     public void shouldStatus400WithEmptyMonthPayment() {
         getValidApprovedCard();
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), null, getValidRandomYear(), generateValidRandomCardsHolder(), generateRandomCVV());
@@ -236,6 +239,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty month attribute to the body when credit")
     public void shouldStatus400WithEmptyMonthCredit() {
         getValidApprovedCard();
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), null, getValidRandomYear(), generateValidRandomCardsHolder(), generateRandomCVV());
@@ -256,6 +260,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty year attribute in the body when paying")
     public void shouldStatus400WithEmptyYearPayment() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), null, generateValidRandomCardsHolder(), generateRandomCVV());
@@ -276,6 +281,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty year attribute in the body when credit")
     public void shouldStatus400WithEmptyYearCredit() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), null, generateValidRandomCardsHolder(), generateRandomCVV());
@@ -296,6 +302,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty holder attribute in the body when paying")
     public void shouldStatus400WithEmptyHolderPayment() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), getValidRandomYear(), null, generateRandomCVV());
@@ -316,6 +323,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty holder attribute in the body when credit")
     public void shouldStatus400WithEmptyHolderCredit() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), getValidRandomYear(), null, generateRandomCVV());
@@ -336,6 +344,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty CVC/CVV attribute in the body when paying")
     public void shouldStatus400WithEmptyCVVPayment() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), getValidRandomYear(), generateValidRandomCardsHolder(), null);
@@ -356,6 +365,7 @@ public class BackendTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Test
+    @DisplayName("Sending a POST request with an empty CVC/CVV attribute in the body when credit")
     public void shouldStatus400WithEmptyCVVCredit() {
 
         cardInfo = new DataHelper.CardInfo(getNumberByStatus("approved"), getValidRandomMonth(), getValidRandomYear(), generateValidRandomCardsHolder(), null);
@@ -373,6 +383,7 @@ public class BackendTest {
         assertEquals(0, credits.size());
         assertEquals(0, orders.size());
     }
+
 }
 
 

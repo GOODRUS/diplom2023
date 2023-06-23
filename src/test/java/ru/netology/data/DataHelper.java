@@ -13,7 +13,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class DataHelper {
 
     static ArrayList<Integer> month = new ArrayList<>();
-
     private static Faker faker = new Faker(new Locale("en"));
     private static Faker fakerCyrillic = new Faker(new Locale("ru"));
     private static LocalDate date = LocalDate.now();
@@ -72,28 +71,8 @@ public class DataHelper {
         return faker.numerify("#### #### ####");
     }
 
-    public static String generateRandomCardNumberThirteenDigits() {
-        return faker.numerify("#### #### #### #");
-    }
-
-    public static String generateRandomCardNumberFifteenDigits() {
-        return faker.numerify("#### #### #### ##");
-    }
-
     public static String generateRandomCardNumberSixteenDigits() {
         return faker.numerify("#### #### #### ####");
-    }
-
-    public static String generateRandomCardNumberSixteenDigitsWithoutSpase() {
-        return faker.numerify("################");
-    }
-
-    public static String generateRandomCardNumberSeventeenDigits() {
-        return faker.numerify("#### #### #### #### #");
-    }
-
-    public static String generateRandomCardNumberEighteenDigits() {
-        return faker.numerify("#### #### #### #### ##");
     }
 
     public static String generateRandomCardNumberNineteenDigits() {
@@ -104,37 +83,40 @@ public class DataHelper {
         return faker.numerify("#### #### #### #### ####");
     }
 
-    public static String getValidRandomMonth() { //генерация валидного месяца
-        //int getMonth = date.getMonthValue();
-        //return LocalDate.now().plusMonths(ThreadLocalRandom.current().nextInt(getMonth, 240 - getMonth)).format(DateTimeFormatter.ofPattern("LL"));
-       int random = ThreadLocalRandom.current().nextInt(1, 12);
-       month.add(random);
-       String rMonth;
-       if (random < 10) {
-       rMonth = "0" + random;
-       } else {
-       rMonth = Integer.toString(random);
-       }
-       return rMonth;
+    public static String getValidRandomMonth() {
+
+        int random = ThreadLocalRandom.current().nextInt(1, 12);
+        month.add(random);
+        String rMonth;
+        if (random < 10) {
+            rMonth = "0" + random;
+        } else {
+            rMonth = Integer.toString(random);
+        }
+        return rMonth;
     }
 
-    public static int getInvalidRandomMonth() { //генерация невалидного месяца больше 12 и менее 100
-        return ThreadLocalRandom.current().nextInt(13, 99);
+    public static String getCurrentMonth() {
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("LL"));
     }
 
-    public static int getMonthOneToNine() { //генерация невалидного месяца больше 12 и менее 100
-        return ThreadLocalRandom.current().nextInt(1, 9);
+    public static String getInvalidRandomMonth() { //генерация невалидного месяца больше 12 и менее 100
+        return Integer.toString(ThreadLocalRandom.current().nextInt(13, 99));
     }
 
-    public static int getMonthNull() { //генерация невалидного месяца больше 12 и менее 100
-        return 0;
+    public static String getMonthOneToNine() { //генерация невалидного месяца больше 12 и менее 100
+        return Integer.toString(ThreadLocalRandom.current().nextInt(1, 9));
+    }
+
+    public static String getMonthZero() { //генерация невалидного месяца больше 12 и менее 100
+        return "0";
     }
 
     public static String getMonthEmpty() { //генерация невалидного месяца больше 12 и менее 100
         return "";
     }
 
-    public static String getMonthDoubleNull() { //генерация невалидного месяца больше 12 и менее 100
+    public static String getMonthDoubleZero() { //генерация невалидного месяца больше 12 и менее 100
         return "00";
     }
 
@@ -142,8 +124,8 @@ public class DataHelper {
         return Integer.toString((date.getYear() - 1) % 100);
     }
 
-    public static String getValidRandomYear() { //Генерация валидного года
-       //return LocalDate.now().plusMonths(ThreadLocalRandom.current().nextInt(0, 4)).format(DateTimeFormatter.ofPattern("yy"));
+    public static String getValidRandomYear() {
+
         int addRandom = ThreadLocalRandom.current().nextInt(0, 3);
         int getMonth = date.getMonthValue();
         int getYear = date.getYear();
@@ -152,28 +134,30 @@ public class DataHelper {
         int currencyYear;
         int randomYear = 0;
         if (getMonth > generateMonth) {
-        currencyYear = getYear + 1;}
-        else {
-        currencyYear = getYear;
+            currencyYear = getYear + 1;
+        } else {
+            currencyYear = getYear;
         }
         randomYear = (currencyYear + addRandom) % 100;
-       return Integer.toString(randomYear);
+        return Integer.toString(randomYear);
     }
 
     public static String getInvalidYear() { //Генерация года больше текущего на 20 лет
         return Integer.toString((date.getYear() + 21) % 100);
     }
 
-    public static String getYearNull() { // Вывод текущего года
+    public static String getYearZero() { // Вывод текущего года
         return "0";
     }
 
-    public static String getYearDoubleNull() { // Вывод текущего года
+    public static String getYearDoubleZero() { // Вывод текущего года
         return "00";
     }
+
     public static String getYearEmpty() { //генерация невалидного месяца больше 12 и менее 100
         return "";
     }
+
     public static String generateValidRandomCardsHolder() { // Владелец валидный вариант
         return faker.name().fullName().toUpperCase();
     }
@@ -184,6 +168,10 @@ public class DataHelper {
 
     public static String generateHolderWithDash() { // с использованием дефиса
         return faker.letterify("??????-?????").toUpperCase();
+    }
+
+    public static String generateHolderWithDoubleSpace() { // с использованием дефиса
+        return faker.letterify("??????  ?????").toUpperCase();
     }
 
     public static String generateHolderWithSpaceBarBefore() { // с использованием пробела до
@@ -220,6 +208,14 @@ public class DataHelper {
 
     public static String generateRandomCVV() { // Генерация валидного CVV
         return faker.number().digits(3);
+    }
+
+    public static String generateRandomCVVOneDigit() { // Генерация валидного CVV
+        return faker.number().digits(1);
+    }
+
+    public static String generateRandomCVVTwoDigits() { // Генерация валидного CVV
+        return faker.number().digits(2);
     }
 
     public static String generateCVVEmpty() { // Генерация невалидного CVV из 0

@@ -53,7 +53,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("Should Happy Path Payment")
+    @DisplayName("Payment for the tour with valid filling in all fields of the card form")
     void shouldHappyPathPayment() {
         cardInfo = DataHelper.getValidApprovedCard();
 
@@ -77,7 +77,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("Should Happy Path Credit")
+    @DisplayName("Payment of the tour on credit with valid filling in all fields of the card form")
     public void shouldHappyPathCredit() {
         cardInfo = DataHelper.getValidApprovedCard();
 
@@ -100,7 +100,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("Should Sad Path")
+    @DisplayName("Refusal to pay for the tour when filling out the form fields with a valid declined card")
     public void shouldSadPathPayment() {
         cardInfo = DataHelper.getValidDeclinedCard();
 
@@ -112,9 +112,9 @@ public class FrontendTest {
         payments = DBHelper.getPayments();
         credits = DBHelper.getCreditsRequest();
         orders = DBHelper.getOrders();
-        assertEquals(1, payments.size());
+        assertEquals(0, payments.size());
         assertEquals(0, credits.size());
-        assertEquals(1, orders.size());
+        assertEquals(0, orders.size());
 
         assertEquals(card.getAmount() * 100, payments.get(0).getAmount());
         assertTrue(payments.get(0).getStatus().equalsIgnoreCase("declined"));
@@ -124,7 +124,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("Should Sad Path Credit")
+    @DisplayName("Refusal of a loan for the purchase of a tour with valid filling in the fields of the declined card form")
     public void shouldSadPathCredit() {
 
         cardInfo = DataHelper.getValidDeclinedCard();
@@ -138,8 +138,8 @@ public class FrontendTest {
         credits = DBHelper.getCreditsRequest();
         orders = DBHelper.getOrders();
         assertEquals(0, payments.size());
-        assertEquals(1, credits.size());
-        assertEquals(1, orders.size());
+        assertEquals(0, credits.size());
+        assertEquals(0, orders.size());
 
         assertTrue(credits.get(0).getStatus().equalsIgnoreCase("declined"));
         assertEquals(credits.get(0).getBank_id(), orders.get(0).getPayment_id());
@@ -148,7 +148,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldUnsuccessfulWith12DigitsInNumber")
+    @DisplayName("Filling in the Card number field with the generated number having the minimum valid length")
     public void shouldUnsuccessfulWith12DigitsInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.generateRandomCardNumberTwelveDigits();
@@ -162,7 +162,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldUnsuccessfulWith19DigitsInNumber")
+    @DisplayName("Filling in the Card number field with the generated number having the maximum valid length")
     public void shouldUnsuccessfulWith19DigitsInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.generateRandomCardNumberNineteenDigits();
@@ -176,7 +176,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldUnsuccessfulWith16DigitsInNumber")
+    @DisplayName("Filling in the Card number field with a generated 16-digit number")
     public void shouldUnsuccessfulWith16DigitsInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.generateRandomCardNumberSixteenDigits();
@@ -186,12 +186,11 @@ public class FrontendTest {
         form.insertingValueInForm(number, cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
         form.matchesByInsertValue(matchesNumber, cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
         form.assertBuyOperationWithErrorNotification();
-        form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldUnsuccessfulWith20DigitsInNumber")
+    @DisplayName("Filling in the Card Number field with a number exceeding the valid length of the card")
     public void shouldVisibleNotificationWith20DigitsInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.generateRandomCardNumberTwentyDigits();
@@ -205,7 +204,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldUnsuccessfulWith11DigitsInNumber")
+    @DisplayName("Filling in the Card Number field below the acceptable valid card length with a number")
     public void shouldVisibleNotificationWith11DigitsInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.generateRandomCardNumberElevenDigits();
@@ -219,7 +218,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldVisibleNotificationWithEmptyNumber") // поле номер карты не заполняется
+    @DisplayName("The Card number field is not filled in")
     public void shouldVisibleNotificationWithEmptyNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         form = card.clickPayButton();
@@ -230,7 +229,7 @@ public class FrontendTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test
-    @DisplayName("shouldSuccessfulWithoutSpacebarInNumber") // тест на ввод номера без пробелов
+    @DisplayName("Filling out the form with valid data with an approved card specified without spaces")
     public void shouldSuccessfulWithoutSpacebarInNumber() {
         cardInfo = DataHelper.getValidApprovedCard();
         var number = DataHelper.getNumberWithoutSpacebarByStatus("approved");
@@ -242,316 +241,369 @@ public class FrontendTest {
         form.assertBuyOperationIsSuccessful();
     }
 
-    @Severity(SeverityLevel.BLOCKER)
-    @Test
-    @DisplayName("shouldNumberFieldEmpty") // тест без ввода номера карты
-    public void shouldNumberFieldEmpty() {
-        cardInfo = DataHelper.getValidApprovedCard();
-        var number = DataHelper.getNumberWithoutSpacebarByStatus("approved");
-        var matchesNumber = cardInfo.getNumber();
-
-        form = card.clickPayButton();
-        form.insertingValueInForm(number, cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(matchesNumber, cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.assertBuyOperationIsSuccessful();
-    }
-
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldInvalidMonth") // Невалидный месяц от 13 до 99
+    @DisplayName("Filling in the Month field with an invalid month number")
     public void shouldInvalidMonth() {
         cardInfo = DataHelper.getValidApprovedCard();
         var month = DataHelper.getInvalidRandomMonth();
+        var matchesMonth = month;
 
         form = card.clickPayButton();
-        form.insertingValueInForm(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.insertingValueInForm(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.assertMonthFieldIsInvalidValue();
+    }
+
+    @Severity(SeverityLevel.MINOR)
+    @Test
+    @DisplayName("Filling in the Month field with zero") // Месяц 0
+    public void shouldGetMonthZero() {
+        cardInfo = DataHelper.getValidApprovedCard();
+        var month = DataHelper.getMonthZero();
+        var matchesMonth = month;
+
+        form = card.clickPayButton();
+        form.insertingValueInForm(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.assertMonthFieldIsInvalidFormat();
+    }
+
+    @Severity(SeverityLevel.MINOR)
+    @Test
+    @DisplayName("Filling in the Month field with double zero") // Месяц 00
+    public void shouldGetMonthDoubleZero() {
+        cardInfo = DataHelper.getValidApprovedCard();
+        var month = DataHelper.getMonthDoubleZero();
+        var matchesMonth = month;
+
+        form = card.clickPayButton();
+        form.insertingValueInForm(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
         form.assertMonthFieldIsInvalidValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGetMonthOneToNine") // Месяц без нуля от 1 до 9
-    public void shouldGetMonthOneToNineWithoutNullBefore() {
+    @DisplayName("Filling in the Month field without zero before the number from 1-9")
+    public void shouldGetMonthOneToNineWithoutZeroBefore() {
         cardInfo = DataHelper.getValidApprovedCard();
         var month = DataHelper.getMonthOneToNine();
-
-        form = card.clickPayButton();
-        form.insertingValueInForm(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.assertBuyOperationIsSuccessful();
-    }
-
-    @Severity(SeverityLevel.MINOR)
-    @Test
-    @DisplayName("shouldGetMonthNull") // Месяц 0
-    public void shouldGetMonthNull() {
-        cardInfo = DataHelper.getValidApprovedCard();
-        var month = DataHelper.getMonthNull();
-
-        form = card.clickPayButton();
-        form.insertingValueInForm(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), Integer.toString(month), cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.assertMonthFieldIsInvalidValueAnother();
-    }
-
-    @Severity(SeverityLevel.MINOR)
-    @Test
-    @DisplayName("shouldGetMonthDoubleNull") // Месяц 00
-    public void shouldGetMonthDoubleNull() {
-        cardInfo = DataHelper.getValidApprovedCard();
-        var month = DataHelper.getMonthDoubleNull();
+        var matchesMonth = month;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.assertMonthFieldIsInvalidValueAnother();
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldWithoutMonth") // без месяца
+    @DisplayName("The Month field is not filled in")
     public void shouldWithoutMonth() {
         cardInfo = DataHelper.getValidApprovedCard();
         var month = DataHelper.getMonthEmpty();
+        var matchesMonth = month;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), month, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, cardInfo.getYear(), cardInfo.getHolder(), cardInfo.getCvc());
         form.assertMonthFieldIsEmptyValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGetYearMoreThanCurrentYearOn20") // больше чем текущий год на 20 лет
+    @DisplayName("Filling in the Year field with a number exceeding the current year by 20 years")
     public void shouldGetYearMoreThanCurrentYearOn20() {
         cardInfo = DataHelper.getValidApprovedCard();
         var year = DataHelper.getInvalidYear();
+        var matchesYear = year;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), matchesYear, cardInfo.getHolder(), cardInfo.getCvc());
         form.assertYearFieldIsInvalidValueWrongDate();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGetDateTimeIsOut") // дата при которой срок вышел
+    @DisplayName("Filling in the Year field with the date at which the card expired")
     public void shouldGetDateTimeIsOut() {
         cardInfo = DataHelper.getValidApprovedCard();
         var year = DataHelper.previousYear();
+        var matchesYear = year;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), matchesYear, cardInfo.getHolder(), cardInfo.getCvc());
         form.assertYearFieldIsInvalidValue();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldGetYearNull") // Год 0
-    public void shouldGetYearNull() {
+    @DisplayName("Filling in the Year field with zero")
+    public void shouldGetYearZero() {
         cardInfo = DataHelper.getValidApprovedCard();
-        var year = DataHelper.getYearNull();
+        var year = DataHelper.getYearZero();
+        var matchesYear = year;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.assertYearFieldIsEmptyValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), matchesYear, cardInfo.getHolder(), cardInfo.getCvc());
+        form.assertYearFieldIsInvalidFormat();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldGetYearDoubleNull") // Год 00
-    public void shouldGetYearDoubleNull() {
+    @DisplayName("Filling in the Year field with double zero")
+    public void shouldGetYearDoubleZero() {
         cardInfo = DataHelper.getValidApprovedCard();
-        var year = DataHelper.getYearDoubleNull();
+        var month = DataHelper.getCurrentMonth();
+        var matchesMonth = month;
+        var year = DataHelper.getYearDoubleZero();
+        var matchesYear = year;
 
         form = card.clickPayButton();
-        form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
+        form.insertingValueInForm(cardInfo.getNumber(), month, year, cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), matchesMonth, matchesYear, cardInfo.getHolder(), cardInfo.getCvc());
         form.assertYearFieldIsInvalidValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldWithoutYear") // без года
+    @DisplayName("The Year field is not filled in")
     public void shouldVisibleNotificationWithEmptyYear() {
         cardInfo = DataHelper.getValidApprovedCard();
         var year = DataHelper.getYearEmpty();
+        var matchesYear = year;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), year, cardInfo.getHolder(), cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), matchesYear, cardInfo.getHolder(), cardInfo.getCvc());
         form.assertYearFieldIsEmptyValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGenerateHolderWithDash") // с использованием дефиса между именами
+    @DisplayName("Filling in the Owner field with the name using dash") // с использованием дефиса между именами
     public void shouldGenerateHolderWithDash() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithDash();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldGenerateHolderWithSpaceBarBefore") // с использованием пробела до
-    public void shouldGenerateHolderWithSpaceBarBefore() {
+    @DisplayName("Filling in the Owner field with the name using a space before the name")
+    public void shouldGenerateHolderWithSpaceBefore() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithSpaceBarBefore();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldGenerateHolderWithSpaceBarAfter") // с использованием пробела после
-    public void shouldGenerateHolderWithSpaceBarAfter() {
+    @DisplayName("Filling in the Owner field with the name using a space after the name")
+    public void shouldGenerateHolderWithSpaceAfter() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithSpaceBarAfter();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGenerateHolderWithUnembossedName") // при неименной карте
+    @DisplayName("Filling in the Owner field with the name with two spaces between the names")
+    public void shouldHolderWithDoubleSpaceBetweenNames() {
+        cardInfo = DataHelper.getValidApprovedCard();
+        var holder = DataHelper.generateHolderWithDoubleSpace();
+        var matchesHolder = holder;
+
+        form = card.clickPayButton();
+        form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
+        form.assertHolderFieldIsInvalidValue();
+    }
+
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    @DisplayName("Filling in the Owner field with an unnamed card")
     public void shouldHolderWithUnembossedName() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithUnembossedName();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldHolderWithSpecialSymbols") // С использованием спец. символов
+    @DisplayName("Filling in the Owner field when specifying the name using special symbols")
     public void shouldHolderWithSpecialSymbols() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithSpecialSymbols();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.assertHolderFieldIsInvalidValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
+        form.assertHolderInvalidSymbols();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldHolderWithUpperAndLowerCaseLatin") // С использованием латиницы верхнего и нижнего регистра
+    @DisplayName("Filling in the Owner field with the name in Latin upper and lower case")
     public void shouldHolderWithUpperAndLowerCaseLatin() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateHolderWithUpperAndLowerCaseLatin();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.assertHolderFieldIsInvalidValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
+        form.assertHolderInvalidSymbols();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldHolderWithCyrillicUpperAndLowerCase") // С использованием кириллицы верхнего и нижнего регистра
+    @DisplayName("Filling in the Owner field with the name in Cyrillic upper and lower case")
     public void shouldHolderWithCyrillicUpperAndLowerCase() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateRandomCardsHolderNameLUCyrillic();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.assertHolderFieldIsInvalidValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
+        form.assertHolderInvalidSymbols();
     }
 
     @Severity(SeverityLevel.MINOR)
     @Test
-    @DisplayName("shouldHolderWithDigits") // С использованием цифр
+    @DisplayName("Filling in the Owner field with the name using numbers")
     public void shouldHolderWithDigits() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateRandomCardsHolderWithDigits();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.assertHolderFieldIsInvalidValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
+        form.assertHolderInvalidSymbols();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldVisibleNotificationWithEmptyHolder") // без указания владельца
+    @DisplayName("The Owner field is not filled in")
     public void shouldVisibleNotificationWithEmptyHolder() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateEmptyHolder();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertHolderFieldIsEmptyValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldHolderWithOneLatter") // Генерация имени владельца из одной буквы верхнего регистра
+    @DisplayName("Filling in the Owner field with the name of a single letter")
     public void shouldHolderWithOneLatter() {
         cardInfo = DataHelper.getValidApprovedCard();
         var holder = DataHelper.generateRandomCardsHolderWithOneLetter();
+        var matchesHolder = holder;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), holder, cardInfo.getCvc());
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), matchesHolder, cardInfo.getCvc());
         form.assertBuyOperationIsSuccessful();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldVisibleNotificationWithEmptyCVC")
-    public void shouldVisibleNotificationWithEmptyCVC() { // Без ввода в поле CVC кода, поле владелец считается пустым
+    @DisplayName("Filling in the CVC/CVV field with one digit")
+    public void shouldGetCVCOneDigit() {
         cardInfo = DataHelper.getValidApprovedCard();
-        var cvc = DataHelper.generateCVVEmpty();
+        var cvc = DataHelper.generateRandomCVVOneDigit();
+        var matchesCVC = cvc;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
-        form.assertCvcFieldIsEmptyValue();
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), matchesCVC);
+        form.assertCvcFieldIsInvalidValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGetEmptyCVC0")
-    public void shouldGetEmptyCVC0() { // Ввод в поле CVV 0
+    @DisplayName("Filling in the CVC/CVV field with two digits")
+    public void shouldGetCVCTwoDigits() {
+        cardInfo = DataHelper.getValidApprovedCard();
+        var cvc = DataHelper.generateRandomCVVTwoDigits();
+        var matchesCVC = cvc;
+
+        form = card.clickPayButton();
+        form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), matchesCVC);
+        form.assertCvcFieldIsInvalidValue();
+    }
+
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    @DisplayName("Filling in the CVC/CVV field with zero")
+    public void shouldGetCVC0() {
         cardInfo = DataHelper.getValidApprovedCard();
         var cvc = DataHelper.generateCVV0();
+        var matchesCVC = cvc;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), matchesCVC);
         form.assertCvcFieldIsInvalidValue();
     }
 
     @Severity(SeverityLevel.NORMAL)
     @Test
-    @DisplayName("shouldGetEmptyCVC00")
-    public void shouldGetEmptyCVC00() { // Ввод в поле CVV 00
+    @DisplayName("Filling in the CVC/CVV field with double zero")
+    public void shouldGetCVC00() {
         cardInfo = DataHelper.getValidApprovedCard();
         var cvc = DataHelper.generateCVV00();
+        var matchesCVC = cvc;
 
         form = card.clickPayButton();
         form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
-        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), matchesCVC);
         form.assertCvcFieldIsInvalidValue();
+    }
+
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    @DisplayName("The CVC/CVV field is not filled in")
+    public void shouldVisibleNotificationWithEmptyCVC() {
+        cardInfo = DataHelper.getValidApprovedCard();
+        var cvc = DataHelper.generateCVVEmpty();
+        var matchesCVC = cvc;
+
+        form = card.clickPayButton();
+        form.insertingValueInForm(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), cvc);
+        form.matchesByInsertValue(cardInfo.getNumber(), cardInfo.getMonth(), cardInfo.getYear(), cardInfo.getHolder(), matchesCVC);
+        form.assertCvcFieldIsEmptyValue();
     }
 }

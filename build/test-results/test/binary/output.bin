@@ -24,9 +24,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "11",
-'    "holder": "MR. TRENTON GREENHOLT",
-    "cvc": "469"
+    "month": "05",
+%    "holder": "KATHARYN MACEJKOVIC",
+    "cvc": "493"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -42,9 +42,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "03",
-    "year": "26",
-    "cvc": "644"
+    "month": "09",
+    "year": "24",
+    "cvc": "025"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -60,9 +60,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "10",
-    "year": "24",
-     "holder": "DENIS GREENHOLT"
+    "month": "02",
+    "year": "25",
+#    "holder": "JACQUELYNN STROSIN"
 }
 Request method:	POST
 /Request URI:	http://localhost:8080/api/v1/pay
@@ -77,10 +77,10 @@
 Multiparts:		<none>
 Body:
 {
-    "month": "06",
+    "month": "08",
     "year": "23",
-    "holder": "MERLE FADEL",
-    "cvc": "135"
+     "holder": "CRUZ DAUGHERTY",
+    "cvc": "515"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -96,9 +96,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "07",
-#    "holder": "MRS. REUBEN JONES",
-    "cvc": "882"
+    "month": "11",
+&    "holder": "MISS GERRY LUEILWITZ",
+    "cvc": "257"
 }
 Request method:	POST
 /Request URI:	http://localhost:8080/api/v1/pay
@@ -114,9 +114,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "07",
-    "year": "24",
-     "holder": "KARRIE BOGAN IV"
+    "month": "03",
+    "year": "25",
+    "holder": "DR. CHAN CONN"
 }
 	Request method:	POST
 	2Request URI:	http://localhost:8080/api/v1/credit
@@ -131,10 +131,10 @@
 	Multiparts:		<none>
 	Body:
 	{
-	    "month": "07",
-	    "year": "24",
-	    "holder": "TUAN NIKOLAUS",
-	    "cvc": "878"
+	    "month": "03",
+	    "year": "26",
+	    "holder": "RETHA MILLS",
+	    "cvc": "556"
 	}
 
 Request method:	POST
@@ -165,11 +165,11 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 
 %    "number": "4444 4444 4444 4441",
 
-    "year": "25",
+    "year": "23",
 
-#    "holder": "LARITA ERNSER III",
+    "holder": "JULIAN HESSEL",
 
-    "cvc": "679"
+    "cvc": "423"
 
 }
 Request method:	POST
@@ -186,10 +186,10 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4442",
-    "month": "08",
-    "year": "24",
-    "holder": "CODI BEER",
-    "cvc": "020"
+    "month": "05",
+    "year": "25",
+#    "holder": "MISS VELVET UPTON",
+    "cvc": "624"
 }
 Request method:	POST
 /Request URI:	http://localhost:8080/api/v1/pay
@@ -205,9 +205,9 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "02",
-    "year": "25",
-    "cvc": "001"
+    "month": "10",
+    "year": "23",
+    "cvc": "610"
 }
 Request method:	POST
 /Request URI:	http://localhost:8080/api/v1/pay
@@ -223,9 +223,9 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "year": "26",
-    "holder": "AUGUST BRAKUS",
-    "cvc": "668"
+    "year": "24",
+"    "holder": "ARNOLDO THOMPSON",
+    "cvc": "256"
 }
 Request method:	POST
 /Request URI:	http://localhost:8080/api/v1/pay
@@ -253,10 +253,10 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "08",
-    "year": "24",
-$    "holder": "JEREMY DOUGLAS SR.",
-    "cvc": "236"
+    "month": "03",
+    "year": "26",
+    "holder": "DANILO LIND",
+    "cvc": "632"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -272,10 +272,10 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4442",
-    "month": "02",
+    "month": "03",
     "year": "26",
-    "holder": "LESTER FEIL",
-    "cvc": "190"
+#    "holder": "LARISSA WILKINSON",
+    "cvc": "168"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -291,27 +291,27 @@ WHeaders:		Accept=application/json, application/javascript, text/javascript, tex
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "03",
-    "year": "24",
-$    "holder": "GEARLDINE KOCH JR.",
-    "cvc": "747"
+    "month": "07",
+    "year": "25",
+    "holder": "PINKIE BLANDA",
+    "cvc": "386"
 }
  š[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
- Ž[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: E:\AutoTesting\diplom2023\build\downloads\1687173047928_19160_1
+ Ž[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: E:\AutoTesting\diplom2023\build\downloads\1687512816280_11824_1
  ‚[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
  µ[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
  {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
- |Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 8888
+ }Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 27913
  %Only local connections are allowed.
  tPlease see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
  (ChromeDriver was started successfully.
  {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
  {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
- \Ð¸ÑŽÐ½. 19, 2023 4:11:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ \Ð¸ÑŽÐ½. 23, 2023 2:33:39 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
  iWARNING: Unable to find an exact match for CDP version 114, so returning the closest version found: 110
  ƒ[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=114.0.5735.134 Platform=WINDOWS
  [[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.12.2
  [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.8.1 build revision: 8ebccac989
- Â[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (4e4c8e23376531f6ba3eb79a69a8f82e)
- ¶[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on WINDOWS (4e4c8e23376531f6ba3eb79a69a8f82e),proxy=null,downloadsFolder=E:\AutoTesting\diplom2023\build\downloads\1687173047928_19160_1] in 1 [size=1]
+ Â[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (27a3b3bc1e679704d3e2cc7a60e3dbdb)
+ ¶[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on WINDOWS (27a3b3bc1e679704d3e2cc7a60e3dbdb),proxy=null,downloadsFolder=E:\AutoTesting\diplom2023\build\downloads\1687512816280_11824_1] in 1 [size=1]
  p[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
