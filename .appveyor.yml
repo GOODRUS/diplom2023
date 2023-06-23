@@ -21,9 +21,9 @@ for:
         - db: MySQL
 
     install:
-      - sudo curl -SL https://github.com/docker/compose/releases/download/v2.7.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+      - sudo curl -SL https://github.com/docker/compose/releases/download/v2.19.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
       - sudo chmod +x /usr/local/bin/docker-compose
-      - sudo docker-compose -f /home/appveyor/projects/diplom2023/docker-compose.yml up
+      - sudo docker-compose -f /home/appveyor/projects/diplom2023/docker-compose.yml up -d
       - sleep 20
       - java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar &
       - sleep 20
@@ -39,9 +39,9 @@ for:
         - db: PostgreSQL
 
     install:
-      - sudo curl -SL https://github.com/docker/compose/releases/download/v2.7.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+      - sudo curl -SL https://github.com/docker/compose/releases/download/v2.19.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
       - sudo chmod +x /usr/local/bin/docker-compose
-      - sudo docker-compose -f /home/appveyor/projects/diplom2023/docker-compose.yml up
+      - sudo docker-compose -f /home/appveyor/projects/diplom2023/docker-compose.yml up -d
       - sleep 20
       - java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar &
       - sleep 20
