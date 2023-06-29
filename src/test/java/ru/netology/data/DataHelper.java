@@ -100,7 +100,7 @@ public class DataHelper {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("LL"));
     }
 
-    public static String getInvalidRandomMonth() { //генерация невалидного месяца больше 12 и менее 100
+    public static String getInvalidRandomMonth() {
         return Integer.toString(ThreadLocalRandom.current().nextInt(13, 99));
     }
 
@@ -123,6 +123,9 @@ public class DataHelper {
     public static String previousYear() { // Для проверки сценария с просроченной картой
         return Integer.toString((date.getYear() - 1) % 100);
     }
+    public static String nextYear() {
+        return Integer.toString((date.getYear() + 1) % 100);
+    }
 
     public static String getValidRandomYear() {
 
@@ -144,6 +147,10 @@ public class DataHelper {
 
     public static String getInvalidYear() { //Генерация года больше текущего на 20 лет
         return Integer.toString((date.getYear() + 21) % 100);
+    }
+
+    public static String getValidYearMoreThanCurrent20() { //Генерация года больше текущего на 20 лет
+        return Integer.toString((date.getYear() + 20) % 100);
     }
 
     public static String getYearZero() { // Вывод текущего года
@@ -198,7 +205,7 @@ public class DataHelper {
         return fakerCyrillic.name().fullName();
     }
 
-    public static String generateRandomCardsHolderWithDigits() { // Для сценария с проверкой ввода владельца на кириллице верхнего и нижнего регистра
+    public static String generateRandomCardsHolderWithDigits() {
         return RandomStringUtils.randomAlphanumeric(12).toUpperCase();
     }
 

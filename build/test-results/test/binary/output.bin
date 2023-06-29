@@ -9,9 +9,15 @@
 #				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
-Body:			<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "year": "25",
+    "holder": "WILLIAN MOHR",
+    "cvc": "377"
+}
 Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
+2Request URI:	http://localhost:8080/api/v1/credit
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -24,9 +30,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "05",
-%    "holder": "KATHARYN MACEJKOVIC",
-    "cvc": "493"
+    "month": "09",
+    "holder": "GRISEL HAYES",
+    "cvc": "836"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -42,9 +48,9 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "09",
+    "month": "04",
     "year": "24",
-    "cvc": "025"
+    "cvc": "596"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -60,12 +66,12 @@
 Body:
 {
 %    "number": "4444 4444 4444 4441",
-    "month": "02",
-    "year": "25",
-#    "holder": "JACQUELYNN STROSIN"
+    "month": "07",
+    "year": "23",
+$    "holder": "ELLSWORTH GLEICHNER"
 }
 Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
+2Request URI:	http://localhost:8080/api/v1/credit
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -77,10 +83,10 @@
 Multiparts:		<none>
 Body:
 {
-    "month": "08",
+    "month": "11",
     "year": "23",
-     "holder": "CRUZ DAUGHERTY",
-    "cvc": "515"
+    "holder": "CHRIS HINTZ I",
+    "cvc": "584"
 }
 Request method:	POST
 2Request URI:	http://localhost:8080/api/v1/credit
@@ -95,13 +101,10 @@
 Multiparts:		<none>
 Body:
 {
-%    "number": "4444 4444 4444 4441",
-    "month": "11",
-&    "holder": "MISS GERRY LUEILWITZ",
-    "cvc": "257"
+    
 }
 Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
+2Request URI:	http://localhost:8080/api/v1/credit
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -113,10 +116,11 @@
 Multiparts:		<none>
 Body:
 {
-%    "number": "4444 4444 4444 4441",
-    "month": "03",
+%    "number": "4444 4444 4444 4442",
+    "month": "04",
     "year": "25",
-    "holder": "DR. CHAN CONN"
+$    "holder": "MR. LATASHIA WYMAN",
+    "cvc": "754"
 }
 	Request method:	POST
 	2Request URI:	http://localhost:8080/api/v1/credit
@@ -131,187 +135,189 @@
 	Multiparts:		<none>
 	Body:
 	{
-	    "month": "03",
-	    "year": "26",
-	    "holder": "RETHA MILLS",
-	    "cvc": "556"
+	%    "number": "4444 4444 4444 4441",
+	    "month": "07",
+	    "year": "25",
+	!    "holder": "JAMISON EFFERTZ",
+	    "cvc": "000"
 	}
-
+
 Request method:	POST
-
-2Request URI:	http://localhost:8080/api/v1/credit
-
+
+/Request URI:	http://localhost:8080/api/v1/pay
+
 Proxy:			<none>
-
+
 Request params:	<none>
-
+
 Query params:	<none>
-
+
 Form params:	<none>
-
+
 Path params:	<none>
-
+
 WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-
+
 #				Content-Type=application/json
-
+
 Cookies:		<none>
-
+
 Multiparts:		<none>
-
+
 Body:
-
+
 {
-
+
 %    "number": "4444 4444 4444 4441",
-
-    "year": "23",
-
-    "holder": "JULIAN HESSEL",
-
-    "cvc": "423"
-
+
+    "month": "06",
+
+"    "holder": "EMANUEL JOHNSTON",
+
+    "cvc": "530"
+
 }
-Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4442",
-    "month": "05",
-    "year": "25",
-#    "holder": "MISS VELVET UPTON",
-    "cvc": "624"
-}
-Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4441",
-    "month": "10",
-    "year": "23",
-    "cvc": "610"
-}
-Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4441",
-    "year": "24",
-"    "holder": "ARNOLDO THOMPSON",
-    "cvc": "256"
-}
-Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-Request method:	POST
-/Request URI:	http://localhost:8080/api/v1/pay
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4441",
-    "month": "03",
-    "year": "26",
-    "holder": "DANILO LIND",
-    "cvc": "632"
-}
-Request method:	POST
-2Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4442",
-    "month": "03",
-    "year": "26",
-#    "holder": "LARISSA WILKINSON",
-    "cvc": "168"
-}
-Request method:	POST
-2Request URI:	http://localhost:8080/api/v1/credit
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
-#				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-%    "number": "4444 4444 4444 4441",
-    "month": "07",
-    "year": "25",
-    "holder": "PINKIE BLANDA",
-    "cvc": "386"
-}
- š[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
- Ž[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: E:\AutoTesting\diplom2023\build\downloads\1687512816280_11824_1
- ‚[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
- µ[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
- {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
- }Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 27913
- %Only local connections are allowed.
- tPlease see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
- (ChromeDriver was started successfully.
- {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
- {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
- \Ð¸ÑŽÐ½. 23, 2023 2:33:39 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
- iWARNING: Unable to find an exact match for CDP version 114, so returning the closest version found: 110
- ƒ[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=114.0.5735.134 Platform=WINDOWS
- [[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.12.2
- [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.8.1 build revision: 8ebccac989
- Â[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (27a3b3bc1e679704d3e2cc7a60e3dbdb)
- ¶[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on WINDOWS (27a3b3bc1e679704d3e2cc7a60e3dbdb),proxy=null,downloadsFolder=E:\AutoTesting\diplom2023\build\downloads\1687512816280_11824_1] in 1 [size=1]
- p[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "month": "09",
+    "year": "23",
+"    "holder": "COLEMAN SHANAHAN",
+    "cvc": "827"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "01",
+    "year": "24",
+    "holder": "MARLON SPINKA"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4442",
+    "month": "04",
+    "year": "26",
+    "holder": "HIRAM MAGGIO",
+    "cvc": "082"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "01",
+    "year": "25",
+    "cvc": "270"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "year": "25",
+    "holder": "MYRTIE BRAUN",
+    "cvc": "701"
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    
+}
+Request method:	POST
+/Request URI:	http://localhost:8080/api/v1/pay
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+WHeaders:		Accept=application/json, application/javascript, text/javascript, text/json
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "number": "4444 4444 4444 4441",
+    "month": "06",
+    "year": "24",
+#    "holder": "MR. SAMUEL WATERS",
+    "cvc": "007"
+}
+ š[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+ Ž[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: E:\AutoTesting\diplom2023\build\downloads\1688031479991_11864_1
+ ‚[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+ µ[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ }Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 15760
+ %Only local connections are allowed.
+ tPlease see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ (ChromeDriver was started successfully.
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ {[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+ \Ð¸ÑŽÐ½. 29, 2023 2:38:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ iWARNING: Unable to find an exact match for CDP version 114, so returning the closest version found: 110
+ ƒ[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=114.0.5735.198 Platform=WINDOWS
+ [[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.12.2
+ [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.8.1 build revision: 8ebccac989
+ Â[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (da0956abd9843c8c7bfcf77a2f13106d)
+ ¶[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on WINDOWS (da0956abd9843c8c7bfcf77a2f13106d),proxy=null,downloadsFolder=E:\AutoTesting\diplom2023\build\downloads\1688031479991_11864_1] in 1 [size=1]
+ p[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]

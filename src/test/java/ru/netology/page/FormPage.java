@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
+import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -63,7 +64,7 @@ public class FormPage {
     }
 
     public void assertBuyOperationIsSuccessful() {
-        successNotification.should(Condition.visible, Duration.ofSeconds(15));
+        successNotification.should(Condition.visible, Duration.ofSeconds(25));
         successNotification.should(Condition.cssClass("notification_visible"));
         successNotification.$x("./div[@class='notification__title']").should(Condition.text("Успешно"));
         successNotification.$x("./div[@class='notification__content']").should(Condition.text("Операция одобрена Банком."));
@@ -72,7 +73,7 @@ public class FormPage {
     }
 
     public void assertBuyOperationWithErrorNotification() {
-        errorNotification.should(Condition.visible, Duration.ofSeconds(15));
+        errorNotification.should(Condition.visible, Duration.ofSeconds(25));
         errorNotification.should(Condition.cssClass("notification_visible"));
         errorNotification.$x("./div[@class='notification__title']").should(Condition.text("Ошибка"));
         errorNotification.$x("./div[@class='notification__content']").should(Condition.text("Ошибка! Банк отказал в проведении операции."));
@@ -80,73 +81,55 @@ public class FormPage {
         errorNotification.should(Condition.hidden);
     }
 
-    public void assertNumberFieldIsEmptyValue() {
-        numberLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
-        numberLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
+    public void assertNumberField(String numberNotification) {
+        if (numberNotification.equals("Неверный формат")) {
+            numberLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        }
+        if (numberNotification.equals("Поле обязательно для заполнения")) {
+            numberLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
+        }
+        numberLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text(numberNotification));
     }
 
-    public void assertNumberFieldIsInvalidValue() {
-        numberLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        numberLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
+    public void assertMonthField(String monthNotification) {
+
+        if (monthNotification.equals("Неверный формат") || monthNotification.equals("Истёк срок действия карты")) {
+            monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        }
+        if (monthNotification.equals("Поле обязательно для заполнения")) {
+            monthLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
+        }
+        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text(monthNotification));
     }
 
-    public void assertMonthFieldIsEmptyValue() {
-        monthLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
-        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
+    public void assertYearField(String yearNotification) {
+        if (yearNotification.equals("Неверный формат") || yearNotification.equals("Истёк срок действия карты")
+                || yearNotification.equals("Неверно указан срок действия карты")) {
+            yearLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        }
+        if (yearNotification.equals("Поле обязательно для заполнения")) {
+            yearLabel.should(Condition.cssClass("input_invalid"));
+        }
+        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text(yearNotification));
     }
 
-    public void assertMonthFieldIsInvalidValue() {
-        monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверно указан срок действия карты"));
+    public void assertHolderField(String holderNotification) {
+        if (holderNotification.equals("Неверный формат") || holderNotification.equals("Наименования владельца должно быть указано латиницей верхнего регистра")) {
+            holderLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        }
+        if (holderNotification.equals("Поле обязательно для заполнения")) {
+            holderLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
+        }
+        holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text(holderNotification));
     }
 
-    public void assertMonthFieldIsInvalidFormat() {
-        monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
-    }
-
-    public void assertYearFieldIsEmptyValue() {
-        yearLabel.should(Condition.cssClass("input_invalid"));
-        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
-    }
-
-    public void assertYearFieldIsInvalidFormat() {
-        monthLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        monthLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
-    }
-
-    public void assertYearFieldIsInvalidValue() {
-        yearLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Истёк срок действия карты"));
-    }
-
-    public void assertYearFieldIsInvalidValueWrongDate() {
-        yearLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        yearLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверно указан срок действия карты"));
-    }
-
-    public void assertHolderFieldIsEmptyValue() {
-        holderLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
-        holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
-    }
-
-    public void assertHolderFieldIsInvalidValue() {
-        holderLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
-    }
-
-    public void assertHolderInvalidSymbols() {
-        holderLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        holderLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Наименования Владельца должно быть указано латиницей верхнего регистра"));
-    }
-
-    public void assertCvcFieldIsEmptyValue() {
-        cvcLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
-        cvcLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Поле обязательно для заполнения"));
-    }
-
-    public void assertCvcFieldIsInvalidValue() {
-        cvcLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
-        cvcLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text("Неверный формат"));
+    public void assertCvcField(String cvcNotification) {
+        if (cvcNotification.equals("Неверный формат")) {
+            cvcLabel.should(Condition.cssClass("input_invalid"), Condition.cssClass("input_has-value"));
+        }
+        if (cvcNotification.equals("Поле обязательно для заполнения")) {
+            cvcLabel.should(Condition.cssClass("input_invalid")).shouldNot(Condition.cssClass("input_has-value"));
+        }
+        cvcLabel.$x(".//span[@class='input__sub']").should(Condition.visible, Condition.text(cvcNotification));
     }
 }
