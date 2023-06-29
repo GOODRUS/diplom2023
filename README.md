@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/oncd4trt4xmxbift/branch/main?svg=true)](https://ci.appveyor.com/project/GOODRUS/diplom2023/branch/main)
 # Дипломный проект по профессии «Тестировщик» #
 ## Настройка SUT, запуск авто-тестов, генерация репортов ##
 **Подключение SUT к MySQL**
