@@ -88,7 +88,8 @@ public class FrontendTestCredit {
     @Severity(SeverityLevel.BLOCKER)
     @Test
     @DisplayName("Refusal of a loan for the purchase of a tour with valid filling in the fields of the declined card form")
-    public void shouldSadPathCredit() {
+    public void
+    shouldSadPathCredit() {
 
         cardInfo = DataHelper.getValidDeclinedCard();
 

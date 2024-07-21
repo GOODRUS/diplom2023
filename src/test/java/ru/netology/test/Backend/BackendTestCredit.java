@@ -1,13 +1,8 @@
 package ru.netology.test.Backend;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.google.gson.Gson;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
 
 import org.junit.jupiter.api.*;
 import ru.netology.data.DataHelper;
@@ -15,7 +10,6 @@ import ru.netology.data.DBHelper;
 
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 import static ru.netology.data.APIHelper.postRequest;
 import static ru.netology.data.DBHelper.cleanDatabase;
